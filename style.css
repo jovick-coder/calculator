@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+.calculator-main-div[theme="1"] {
+  --main-background-color: hsl(222, 26%, 31%);
+  --screen-background-color: hsl(224, 36%, 15%);
+  --screen-text-color: rgb(255, 255, 255);
+  --button-div-background-color: hsl(222, 44%, 12%);
+  --button-background-color: hsl(30, 25%, 89%);
+  --button-shadow-color: hsl(28, 16%, 65%);
+  --button-text-color: hsl(225, 21%, 49%);
+  --button-dark-background-color: hsl(225, 21%, 49%);
+  --button-dark-shadow-color: hsl(224, 28%, 35%);
+  --button-red-background-color: hsl(6, 63%, 50%);
+  --button-red-shadow-color: hsl(6, 70%, 34%);
+}
+.calculator-main-div[theme="2"] {
+  --main-background-color: hsl(0, 0%, 90%);
+  --screen-background-color: hsl(0, 0%, 93%);
+  --screen-text-color: hsl(60, 10%, 19%);
+  --button-div-background-color: hsl(0, 5%, 81%);
+  --button-background-color: hsl(30, 25%, 89%);
+  --button-shadow-color: hsl(28, 16%, 65%);
+  --button-text-color: hsl(60, 10%, 19%);
+  --button-dark-background-color: hsl(185, 42%, 37%);
+  --button-dark-shadow-color: hsl(185, 58%, 25%);
+  --button-red-background-color: hsl(25, 98%, 40%);
+  --button-red-shadow-color: hsl(25, 99%, 27%);
+}
+.calculator-main-div[theme="3"] {
+  --main-background-color: hsl(268, 75%, 9%);
+  --screen-background-color: hsl(268, 71%, 12%);
+  --screen-text-color: hsl(52, 100%, 62%);
+  --button-div-background-color: hsl(268, 71%, 12%);
+  --button-background-color: hsl(268, 47%, 21%);
+  --button-shadow-color: hsl(290, 70%, 36%);
+  --button-text-color: hsl(52, 100%, 62%);
+  --button-dark-background-color: hsl(281, 89%, 26%);
+  --button-dark-shadow-color: hsl(285, 91%, 52%);
+  --button-red-background-color: hsl(176, 100%, 44%);
+  --button-red-shadow-color: hsl(177, 92%, 70%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+.calculator-main-div {
+  /* border: solid red 1px; */
+  background-color: var(--main-background-color);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.calculator-frame {
+  /* border: solid red; */
+  width: 350px;
+  margin: auto;
+  background-color: var(--main-background-color);
+  /* height: 500px; */
+}
+.calculator-header {
+  color: var(--screen-text-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  /* border: solid red; */
+}
+.calculator-header .calculator-name {
+  margin: auto 0;
+  font-size: 25px;
+}
+.calculator-header .theme-div {
+  /* color: var(--screen-text-color); */
+  display: flex;
+  justify-content: space-around;
+  /* flex-direction: column; */
+  font-size: 10px;
+  text-align: center;
+}
+.calculator-header .theme-div div {
+  /* border: solid 1px red; */
+  /* color: var(--screen-text-color); */
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 5px;
+}
+.calculator-display {
+  background-color: var(--screen-background-color);
+  height: 90px;
+  border-radius: 5px;
+  color: var(--screen-text-color);
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.calculator-display .sign {
+  padding: 0 2px 0 0;
+}
+.calculating-numbers {
+  overflow-x: scroll;
+  width: 100%;
+  text-align: end;
+  cursor: pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+.calculating-numbers::-webkit-scrollbar {
+  display: none;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  height: 5px;
+}
+.calculating-numbers::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+.calculating-numbers::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+.button-div {
+  background-color: var(--button-div-background-color);
+  /* height: 120px; */
+  padding: 20px;
+  border-radius: 5px;
+  color: var(--button-text-color);
+  margin-top: 30px;
+  justify-content: space-evenly;
+}
+.button-div .btn-row {
+  display: flex;
+  justify-content: space-evenly;
+}
+.button-div .btn-row button {
+  background-color: var(--button-background-color);
+  box-shadow: 0px 3px var(--button-shadow-color);
+  height: 35px;
+  width: 70px;
+  border-radius: 5px;
+  color: var(--button-text-color);
+  margin: 8px 0;
+  font-size: 20px;
+  padding: 0;
+  border: none;
+}
+.button-div .btn-row button.dark {
+  background-color: var(--button-dark-background-color);
+  box-shadow: 0px 3px var(--button-dark-shadow-color);
+  color: rgb(238, 238, 238);
+}
+.button-div .btn-row button.red {
+  background-color: var(--button-red-background-color);
+  color: rgb(238, 238, 238);
+  box-shadow: 0px 3px var(--button-red-shadow-color);
+}
+.button-div .btn-row:last-child button {
+  width: 146px;
+  /* border: solid; */
+}
