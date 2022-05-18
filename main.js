@@ -104,6 +104,7 @@ function calculate() {
       break;
 
     case "*":
+      console.log(currentCalculation + "x" + currentFigure);
       currentCalculation = Number(currentCalculation) * Number(currentFigure);
       currentFigure = "";
       return Number(currentCalculation);
@@ -135,6 +136,7 @@ function calculatorAnswer() {
   // console.log(calculate());
 }
 
+// get sign from button
 signButtons.forEach((sinBtn) => {
   sinBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -148,7 +150,7 @@ signButtons.forEach((sinBtn) => {
       currentSign = textContent;
       displaySignScreen.innerHTML = textContent;
       currentCalculation = calculate();
-      currentFigure = 0;
+      // currentFigure = 0;
     }
   });
 });
@@ -161,19 +163,18 @@ numberButtons.forEach((numBtn) => {
 
     const displayScreen = document.querySelector(".calculating-numbers");
     const fingerLength = displayScreen.innerText.length;
-
+    // check length of numbers on screen make sure the are not more that 12
     if (fingerLength > 12) {
       console.log("text too log");
       return;
     }
-    //  else {
-    //   currentFigure = Number(displayScreen.innerText)
-    // }
+
     // if sign variable is empty we know they are still writing the first set of numbers
     if (currentSign === "") {
-      currentCalculation = `${Number(currentCalculation)}${Number(
-        textContent
-      )}`;
+      // currentCalculation = `${Number(currentCalculation)}${Number(
+      //   textContent
+      // )}`;
+      currentCalculation = `${Number(textContent)}`;
       // console.log(currentFigure);
       // if(currentCalculation)
       displayScreen.innerHTML = textContent;
